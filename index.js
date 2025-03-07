@@ -30,7 +30,9 @@ const replaceClose = (
   head = string.substring(0, index) + replace,
   tail = string.substring(index + close.length),
   next = tail.indexOf(close)
-) => head + (next < 0 ? tail : replaceClose(next, tail, close, replace))
+) => {
+  return head + (next < 0 ? tail : replaceClose(next, tail, close, replace));
+}
 
 const clearBleed = (index, string, open, close, replace) =>
   index < 0
