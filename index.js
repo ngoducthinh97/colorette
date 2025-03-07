@@ -31,6 +31,7 @@ const replaceClose = (
   tail = string.substring(index + close.length),
   next = tail.indexOf(close)
 ) => {
+  console.log(index, string, close, replace);
   return head + (next < 0 ? tail : replaceClose(next, tail, close, replace));
 }
 
